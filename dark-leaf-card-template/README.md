@@ -16,7 +16,8 @@ A custom Anki card template with a clean dark and green palette, a collapsible *
 
 <!--- to be added later! --->
 
-> Screenshots taken on Anki Desktop ⁨25.09.2 using [this](https://ankiweb.net/shared/info/1210908941) addon.
+> Screenshots taken on Anki Desktop 25.09.2 using the [Onigiri](https://ankiweb.net/shared/info/1210908941) addon.
+ 
 <br>
 
 ---
@@ -58,15 +59,18 @@ You can use `<b>` inside `<pre>` or `<code>` to highlight a specific token in th
 
 ## 📗 Installation
 
+
 1. Make sure to have [Coolvetica](https://www.dafont.com/coolvetica.font) downloaded.
 2. Rename the font file to `_Coolvetica-Regular.ttf` and paste it in your [Anki media folder](https://docs.ankiweb.net/files.html#media):
    - **Windows:** `%APPDATA%\Anki2\<profile>\collection.media\`
    - **macOS:** `~/Library/Application Support/Anki2/<profile>/collection.media/`
    - **Linux:** `~/.local/share/Anki2/<profile>/collection.media/`
-3. Get the [latest `.apkg`](https://github.com/d-olivr/anki-dark-leaf/releases) release.
-4. In Anki, go to `File > Import ...` and select the `.apgk` deck file.
-5. Add your new cards by selecting the `toggle` card type
-6. Done :)
+3. In Anki, click `Add`, then `Manage` next to Type, then `Add` and select `Basic` to create a new note type.
+4. Select the new note type and click `Cards...`
+5. Rename the card to `toggle`, then paste `front.html` into "Front Template", `back.html` into "Back Template", and `main.css` into "Styling", then click `Save`.
+6. Back in `Manage Note Types`, select the note type and click `Fields...` to rename/add fields so they match `Front`, `Back`, and `Example` as described above.
+7. Add your new cards by selecting the `toggle` card type.
+8. Done :)
 
-> The font filename must start with `_` so Anki doesn't strip it during sync or delete it when [checking media](https://docs.ankiweb.net/media.html#checking-media).
+> NOTE: The font filename must start with `_` so Anki doesn't strip it during sync or delete it when [checking media](https://docs.ankiweb.net/media.html#checking-media).
 
