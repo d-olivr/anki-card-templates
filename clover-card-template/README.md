@@ -21,7 +21,7 @@ A dark, green-toned Anki card template for general study use: a simple **front/b
 </div>
 
 
-> Screenshots taken on Anki Desktop ⁨25.09.2 using [this](https://ankiweb.net/shared/info/1210908941) addon.
+> Screenshots taken on Anki Desktop 25.09.2 using the [Onigiri](https://ankiweb.net/shared/info/1210908941) addon.
 
 <br>
 
