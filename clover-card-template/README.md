@@ -2,12 +2,16 @@
 
 # 🍀 Anki Clover — Card Template
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](./front.html)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](./style.css)
+<br>
+
+<img src="https://img.shields.io/badge/HTML5-5e9e80?style=for-the-badge&logo=html5&logoColor=2f4f40" />
+<img src="https://img.shields.io/badge/CSS3-5e9e80?style=for-the-badge&logo=css3&logoColor=2f4f40" />
 
 </div>
 
-A dark, green-toned Anki card template for general study use: a simple **front/back** layout with an optional example tucked behind a hint. It inherits the look of [Dark Leaf](https://github.com/d-olivr/anki-dark-leaf), but with a refreshed layout. Featuring a 'session' topbar plus decorated bubbles.
+<br>
+
+A dark, green-toned Anki card template for general study use: a simple **front/back** layout with an optional example tucked behind a hint. It inherits the look of [Dark Leaf](https://github.com/d-olivr/anki-card-templates/blob/main/dark-leaf-card-template), but with a refreshed layout. Featuring a 'session' topbar plus decorated bubbles.
 
 ---
 
@@ -82,12 +86,11 @@ Dedicated `.mobile` rules shrink paddings, font sizes, and the background grid t
    - **Windows:** `%APPDATA%\Anki2\<profile>\collection.media\`
    - **macOS:** `~/Library/Application Support/Anki2/<profile>/collection.media/`
    - **Linux:** `~/.local/share/Anki2/<profile>/collection.media/`
-3. Grab the latest `.apkg` from the [releases](https://github.com/d-olivr/anki-clover-template/releases) page.
-4. In Anki, go to `File > Import ...` and select the `.apkg` deck file.
-5. When creating new cards, select this template's note type.
-6. Fill in the `front`, `back`, `eg`, and `Tags` fields as described in the table above.
-7. Done :)
+3. In Anki, click `Add`, then `Manage` next to Type, then `Add` and select `Basic` to create a new note type.
+4. Select the new note type and click `Cards...`
+5. Paste `front.html` into "Front Template", `back.html` into "Back Template", and `style.css` into "Styling", then click `Save`.
+6. Back in `Manage Note Types`, select the note type and click `Fields...` to rename/add fields so they match `front`, `back` and `eg`, as described in the table above.
+7. When creating new cards, select this template's note type and fill in the fields as described above.
+8. Done :)
 
-> **Already have a note type set up?** You can skip the `.apkg` import entirely -> just copy the `front.html`, `back.html`, and `style.css` from this repo and paste them into your note type's Card Templates and Styling in Anki, overwriting what's already there.
-
-> The font filename must start with `_` so Anki doesn't strip it during sync or delete it when [checking media](https://docs.ankiweb.net/media.html#checking-media).
+> **NOTE:** The font filename must start with `_` so Anki doesn't strip it during sync or delete it when [checking media](https://docs.ankiweb.net/media.html#checking-media).
