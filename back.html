@@ -1,0 +1,26 @@
+<div id="outer">
+<div id="content">
+
+<div class="topbar">
+  <span class="topbar-title">study session</span>
+  {{#Tags}}<span class="tags">{{Tags}}</span>{{/Tags}}
+</div>
+
+<div class="bubble question">
+  <span class="deco deco-left">🍀</span>
+  {{edit:front}}
+  <span class="deco deco-right">☘️</span>
+</div>
+
+<div class="bubble answer">
+  {{edit:back}}
+</div>
+
+{{#eg}}
+<div class="hint-area mathjax-context">
+{{mathjax:hint:eg}}
+</div>
+{{/eg}}
+
+</div>
+</div>
