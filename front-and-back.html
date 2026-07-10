@@ -1,0 +1,30 @@
+<!------------ FRONT ---------------->
+<!-- This snippet represents the front side of the flashcard -->
+<!-- It should be pasted int "Cards" > "Front" -->
+<div id="outer">
+  <div id="content">
+    <div class="top">{{front}}</div>
+  </div>
+</div>
+
+<!------------ BACK---------------->
+<!-- This snippet represents the front side of the flashcard -->
+<!-- It should be pasted int "Cards" > "Back" -->
+<div id="outer">
+  <div id="content">
+    <div class="top">{{front}}</div>
+    <div class="bottom">{{back}}</div>
+
+    {{#eg}}
+<div class="word-details">
+  <details>
+    <summary>e.g.:</summary>
+    <div class="word-eg">
+      {{eg}}
+    </div>
+  </details>
+</div>	
+{{/eg}}
+
+  </div>
+</div>
