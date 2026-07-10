@@ -16,7 +16,8 @@ A custom Anki card template with a clean dark and green palette, a collapsible *
 
 <!--- to be added later! --->
 
-> Screenshots taken on Anki Desktop ⁨25.09.2 using [this](https://ankiweb.net/shared/info/1210908941) addon.
+> Screenshots taken on Anki Desktop 25.09.2 using the [Onigiri](https://ankiweb.net/shared/info/1210908941) addon.
+ 
 <br>
 
 ---
