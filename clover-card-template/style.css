@@ -11,9 +11,10 @@
 
 /* Coolvetica */
 @font-face {
-  font-family: coolvetica;
-  src: url("_Coolvetica Rg.otf");
+  font-family: "coolvetica";
+  src: url("_coolvetica_rg.ttf");
   font-style: normal;
+  font-weight: normal;
 }
 
 html,
@@ -62,7 +63,7 @@ body {
   padding-bottom: 28px;
 }
 
-/* ---------- top bar ---------- */
+/* ---------- topbar pill ---------- */
 .topbar {
   display: flex;
   align-items: center;
@@ -89,7 +90,19 @@ body {
   margin: 0;
 }
 
-/* ---------- bubbles (question and answer) ---------- */
+/* ---------- tags ------------ */
+.tags {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--divider);
+  background-color: transparent;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* ---------- bubbles (pergunta / resposta) ---------- */
 .bubble {
   position: relative;
   margin: 22px 24px 0 24px;
@@ -129,9 +142,9 @@ body {
   right: -8px;
 }
 
+/* ---------- destaque de termos-chave ---------- */
 .term,
 .bubble.question b {
-  color: var(--accent);
   font-weight: 700;
 }
 
@@ -141,7 +154,7 @@ body {
   font-weight: 900;
 }
 
-/* ---------- hint ---------- */
+/* ---------- hint nativo do anki ---------- */
 .hint-area {
   text-align: center;
 }
@@ -184,6 +197,79 @@ div.hint {
   text-align: center;
 }
 
+/* ---------- image occlusion ------------ */
+.io-bubble {
+  padding: 15px;
+}
+
+#image-occlusion-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#image-occlusion-container img,
+#image-occlusion-container canvas {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+#err {
+  color: #ea6962;
+  font-size: 18px;
+}
+
+#image-occlusion-canvas {
+  --inactive-shape-color: #5c7a54;
+  --active-shape-color: #89c27e;
+  --inactive-shape-border: 1px solid rgba(101, 122, 97, 0.8);
+  --active-shape-border: 1px solid rgba(137, 194, 126, 0.9);
+}
+
+.io-toggle-wrap {
+  margin-top: 18px;
+}
+
+.io-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--edge);
+  color: var(--accent);
+  font-family: "coolvetica", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.io-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ---------- audio ------------ */
+.replay-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.replay-button svg circle {
+  fill: #2d3d2d;
+}
+
+.replay-button svg path {
+  fill: #7cb87c;
+}
+
+.replay-button svg {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+}
+
+/* ---------- misc text ------------ */
 .small {
   font-size: 20px;
   color: var(--en-text);
@@ -250,18 +336,6 @@ pre code {
   padding: 0;
   display: block;
   line-height: 1.5;
-}
-
-/* ---------- tags ------------ */
-.tags {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: var(--divider);
-  background-color: transparent;
-  padding: 2px 6px;
-  border-radius: 8px;
 }
 
 /* ---------- math ------------ */
@@ -387,6 +461,11 @@ svg {
   margin: 10px 12px 0 12px;
   padding: 16px 18px;
   font-size: 18px;
+}
+
+.mobile .io-toggle {
+  font-size: 15px;
+  padding: 7px 16px;
 }
 
 .mobile mjx-container,
