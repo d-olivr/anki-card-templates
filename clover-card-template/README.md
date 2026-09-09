@@ -54,6 +54,9 @@ CSS is already set up for MathJax (`mjx-container`) and KaTeX, with both inline 
 
 Cloze deletions are styled through the `.cloze` class, rendered in the accent color with extra bold weight so the hidden part stands out clearly from the rest of the card text.
 
+### 🟢 Image Occlusion support
+Image occlusion cards are styled to match the deck's theme, masks use the accent green for active shapes and a muted green for inactive ones.
+
 ### 🟢 Responsive layout
 
 Dedicated `.mobile` rules shrink paddings, font sizes, and the background grid to better fit the Anki mobile screen, with no extra configuration needed.
