@@ -1,0 +1,534 @@
+:root {
+  --text: #f2e6d0;
+  --bg-front: #2b1838;
+  --bg-back: #130c1a;
+  --accent: #ff8a1f;
+  --en-text: #ffc98a;
+  --divider: #9a6bb0;
+  --edge: rgba(154, 107, 176, 0.35);
+  --grid-line: rgba(255, 138, 31, 0.06);
+  --glow: rgba(255, 138, 31, 0.55);
+}
+
+/* ---------- font ---------- */
+@font-face {
+  font-family: "coolvetica";
+  src: url("_coolvetica_rg.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card,
+.card.nightMode {
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: "coolvetica", sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+  color: var(--text);
+  width: 100%;
+  min-height: 100vh;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#outer {
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  border-radius: 34px;
+  border: 2px solid var(--edge);
+  box-shadow:
+    0 10px 50px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(255, 138, 31, 0.12);
+  overflow: hidden;
+  background-color: var(--bg-back);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg%3E%3Cpath d='M220 0L220.0 220.0M220 0L135.8 203.3M220 0L64.4 155.6M220 0L16.7 84.2M220 0L0.0 0.0M220.0 35.0Q214.4 28.1 206.6 32.3M206.6 32.3Q204.1 23.9 195.3 24.7M195.3 24.7Q196.1 15.9 187.7 13.4M187.7 13.4Q191.9 5.6 185.0 0.0M220.0 70.0Q208.8 56.3 193.2 64.7M193.2 64.7Q188.1 47.7 170.5 49.5M170.5 49.5Q172.3 31.9 155.3 26.8M155.3 26.8Q163.7 11.2 150.0 0.0M220.0 105.0Q203.2 84.4 179.8 97.0M179.8 97.0Q172.2 71.6 145.8 74.2M145.8 74.2Q148.4 47.8 123.0 40.2M123.0 40.2Q135.6 16.8 115.0 0.0M220.0 140.0Q197.6 112.6 166.4 129.3M166.4 129.3Q156.2 95.5 121.0 99.0M121.0 99.0Q124.5 63.8 90.7 53.6M90.7 53.6Q107.4 22.4 80.0 0.0M220.0 175.0Q192.0 140.7 153.0 161.7M153.0 161.7Q140.3 119.3 96.3 123.7M96.3 123.7Q100.7 79.7 58.3 67.0M58.3 67.0Q79.3 28.0 45.0 0.0M220.0 210.0Q186.4 168.9 139.6 194.0M139.6 194.0Q124.3 143.2 71.5 148.5M71.5 148.5Q76.8 95.7 26.0 80.4M26.0 80.4Q51.1 33.6 10.0 0.0' fill='none' stroke='%23c9a0dc' stroke-opacity='0.5' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg transform='rotate(180 110.0 110.0)'%3E%3Cpath d='M220 0L220.0 220.0M220 0L135.8 203.3M220 0L64.4 155.6M220 0L16.7 84.2M220 0L0.0 0.0M220.0 35.0Q214.4 28.1 206.6 32.3M206.6 32.3Q204.1 23.9 195.3 24.7M195.3 24.7Q196.1 15.9 187.7 13.4M187.7 13.4Q191.9 5.6 185.0 0.0M220.0 70.0Q208.8 56.3 193.2 64.7M193.2 64.7Q188.1 47.7 170.5 49.5M170.5 49.5Q172.3 31.9 155.3 26.8M155.3 26.8Q163.7 11.2 150.0 0.0M220.0 105.0Q203.2 84.4 179.8 97.0M179.8 97.0Q172.2 71.6 145.8 74.2M145.8 74.2Q148.4 47.8 123.0 40.2M123.0 40.2Q135.6 16.8 115.0 0.0M220.0 140.0Q197.6 112.6 166.4 129.3M166.4 129.3Q156.2 95.5 121.0 99.0M121.0 99.0Q124.5 63.8 90.7 53.6M90.7 53.6Q107.4 22.4 80.0 0.0M220.0 175.0Q192.0 140.7 153.0 161.7M153.0 161.7Q140.3 119.3 96.3 123.7M96.3 123.7Q100.7 79.7 58.3 67.0M58.3 67.0Q79.3 28.0 45.0 0.0M220.0 210.0Q186.4 168.9 139.6 194.0M139.6 194.0Q124.3 143.2 71.5 148.5M71.5 148.5Q76.8 95.7 26.0 80.4M26.0 80.4Q51.1 33.6 10.0 0.0' fill='none' stroke='%23c9a0dc' stroke-opacity='0.5' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 50% 0%, rgba(255, 138, 31, 0.14), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(154, 107, 176, 0.16), transparent 60%);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom, 0 0, 0 0;
+  background-size: 230px 230px, 230px 230px, 100% 100%, 100% 100%;
+  padding-bottom: 28px;
+}
+
+
+/* ---------- topbar pill ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: calc(100% - 48px);
+  margin: 24px auto 0 auto;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(154, 107, 176, 0.18);
+  font-size: 14px;
+  color: var(--divider);
+  opacity: 0.75;
+}
+
+.topbar::before {
+  content: "🎃";
+  font-size: 13px;
+}
+
+.topbar-title {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.topbar .tags {
+  margin: 0;
+}
+
+/* ---------- tags ------------ */
+.tags {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--divider);
+  background-color: transparent;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* -------------------- bubbles (pergunta / resposta) -------------------- */
+.bubble {
+  position: relative;
+  margin: 22px 24px 0 24px;
+  padding: 34px 42px;
+  border-radius: 30px;
+  font-size: 30px;
+}
+
+.bubble.question {
+  background-color: var(--bg-front);
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.45),
+    0 0 22px rgba(154, 107, 176, 0.2);
+  border: 1px solid var(--edge);
+}
+
+.bubble.answer {
+  background-color: var(--bg-back);
+  border: 1px solid rgba(255, 138, 31, 0.3);
+  font-size: 27px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.deco {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 6px rgba(255, 138, 31, 0.5));
+}
+
+.deco-left {
+  top: -14px;
+  left: -8px;
+}
+
+.deco-right {
+  bottom: -14px;
+  right: -8px;
+}
+
+/* ---------- destaque de termos-chave ---------- */
+.term,
+.bubble.question b {
+  font-weight: 700;
+  color: var(--en-text);
+}
+
+/* ---------- cloze ---------- */
+.cloze {
+  color: var(--accent);
+  font-weight: 900;
+  text-shadow: 0 0 10px var(--glow);
+}
+
+/* ---------- hint ---------- */
+.hint-area {
+  text-align: center;
+}
+
+a.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--edge);
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+a.hint::before {
+  content: "👻";
+  font-size: 14px;
+}
+
+a.hint:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+div.hint {
+  margin: 14px 24px 0 24px;
+  padding: 22px 30px;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--divider);
+  color: var(--text);
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ---------- pill row (dictionary + example) ---------- */
+.pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 0 24px;
+}
+
+.pill-row a.hint,
+.pill-row .dict-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--edge);
+  color: var(--divider);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.pill-row a.hint::before {
+  color: var(--divider);
+}
+
+.pill-row a.hint:hover,
+.pill-row .dict-pill:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.mobile .pill-row a.hint,
+.mobile .pill-row .dict-pill {
+  font-size: 13px;
+  padding: 6px 14px;
+}
+
+/* -------------------- image occlusion ---------------------- */
+.io-bubble {
+  padding: 15px;
+}
+
+#image-occlusion-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#image-occlusion-container img,
+#image-occlusion-container canvas {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+#err {
+  color: #ff5f5f;
+  font-size: 18px;
+}
+
+#image-occlusion-canvas {
+  --inactive-shape-color: #7a3fa0;
+  --active-shape-color: #ff8a1f;
+  --inactive-shape-border: 1px solid rgba(154, 107, 176, 0.8);
+  --active-shape-border: 1px solid rgba(255, 138, 31, 0.9);
+}
+
+.io-toggle-wrap {
+  margin-top: 18px;
+}
+
+.io-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--edge);
+  color: var(--accent);
+  font-family: "coolvetica", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.io-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ---------- audio ------------ */
+.replay-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.replay-button svg circle {
+  fill: #2b1838;
+}
+
+.replay-button svg path {
+  fill: #ff8a1f;
+}
+
+.replay-button svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* ---------- misc text ------------ */
+.small {
+  font-size: 20px;
+  color: var(--en-text);
+}
+
+.medium {
+  font-size: 27px;
+}
+
+.sz {
+  color: var(--en-text);
+  font-size: 20px;
+}
+
+em {
+  font-style: italic;
+}
+
+b {
+  font-weight: 900;
+}
+
+.hidden {
+  display: none;
+}
+
+/* -------------------- code ---------------------- */
+
+/* ---------- inline ------------ */
+code {
+  font-family: monospace, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: #ffc98a;
+}
+
+code b,
+pre b {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* ---------- block ------------ */
+pre {
+  font-size: 16px;
+  font-family: monospace, monospace;
+  background-color: #0d0812;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  text-align: left;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #ffc98a;
+  border: 1px solid rgba(154, 107, 176, 0.3);
+}
+
+pre code {
+  font-family: monospace, monospace;
+  font-size: 20px;
+  color: #e6d9f0;
+  background: none;
+  padding: 0;
+  display: block;
+  line-height: 1.5;
+}
+
+/* -------------------- math ---------------------- */
+mjx-container {
+  display: inline-block !important;
+  direction: ltr;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  max-width: 100%;
+}
+
+mjx-container[display="true"] {
+  display: block !important;
+  overflow-x: auto;
+  margin: 8px 0;
+  text-align: center;
+}
+
+mjx-container,
+mjx-container * {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+}
+
+.mathjax-context mjx-container {
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.katex-display {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.katex {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* -------------------- media ---------------------- */
+img,
+table,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------- mobile -------------------- */
+.mobile .card,
+.mobile .card.nightMode {
+  font-size: 22px;
+  padding: 12px;
+  min-height: unset;
+
+  background-color: var(--bg-back);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg%3E%3Cpath d='M220 0L220.0 220.0M220 0L135.8 203.3M220 0L64.4 155.6M220 0L16.7 84.2M220 0L0.0 0.0M220.0 35.0Q214.4 28.1 206.6 32.3M206.6 32.3Q204.1 23.9 195.3 24.7M195.3 24.7Q196.1 15.9 187.7 13.4M187.7 13.4Q191.9 5.6 185.0 0.0M220.0 70.0Q208.8 56.3 193.2 64.7M193.2 64.7Q188.1 47.7 170.5 49.5M170.5 49.5Q172.3 31.9 155.3 26.8M155.3 26.8Q163.7 11.2 150.0 0.0M220.0 105.0Q203.2 84.4 179.8 97.0M179.8 97.0Q172.2 71.6 145.8 74.2M145.8 74.2Q148.4 47.8 123.0 40.2M123.0 40.2Q135.6 16.8 115.0 0.0M220.0 140.0Q197.6 112.6 166.4 129.3M166.4 129.3Q156.2 95.5 121.0 99.0M121.0 99.0Q124.5 63.8 90.7 53.6M90.7 53.6Q107.4 22.4 80.0 0.0M220.0 175.0Q192.0 140.7 153.0 161.7M153.0 161.7Q140.3 119.3 96.3 123.7M96.3 123.7Q100.7 79.7 58.3 67.0M58.3 67.0Q79.3 28.0 45.0 0.0M220.0 210.0Q186.4 168.9 139.6 194.0M139.6 194.0Q124.3 143.2 71.5 148.5M71.5 148.5Q76.8 95.7 26.0 80.4M26.0 80.4Q51.1 33.6 10.0 0.0' fill='none' stroke='%23c9a0dc' stroke-opacity='0.5' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cg transform='rotate(180 110.0 110.0)'%3E%3Cpath d='M220 0L220.0 220.0M220 0L135.8 203.3M220 0L64.4 155.6M220 0L16.7 84.2M220 0L0.0 0.0M220.0 35.0Q214.4 28.1 206.6 32.3M206.6 32.3Q204.1 23.9 195.3 24.7M195.3 24.7Q196.1 15.9 187.7 13.4M187.7 13.4Q191.9 5.6 185.0 0.0M220.0 70.0Q208.8 56.3 193.2 64.7M193.2 64.7Q188.1 47.7 170.5 49.5M170.5 49.5Q172.3 31.9 155.3 26.8M155.3 26.8Q163.7 11.2 150.0 0.0M220.0 105.0Q203.2 84.4 179.8 97.0M179.8 97.0Q172.2 71.6 145.8 74.2M145.8 74.2Q148.4 47.8 123.0 40.2M123.0 40.2Q135.6 16.8 115.0 0.0M220.0 140.0Q197.6 112.6 166.4 129.3M166.4 129.3Q156.2 95.5 121.0 99.0M121.0 99.0Q124.5 63.8 90.7 53.6M90.7 53.6Q107.4 22.4 80.0 0.0M220.0 175.0Q192.0 140.7 153.0 161.7M153.0 161.7Q140.3 119.3 96.3 123.7M96.3 123.7Q100.7 79.7 58.3 67.0M58.3 67.0Q79.3 28.0 45.0 0.0M220.0 210.0Q186.4 168.9 139.6 194.0M139.6 194.0Q124.3 143.2 71.5 148.5M71.5 148.5Q76.8 95.7 26.0 80.4M26.0 80.4Q51.1 33.6 10.0 0.0' fill='none' stroke='%23c9a0dc' stroke-opacity='0.5' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 50% 0%, rgba(255, 138, 31, 0.12), transparent 50%);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom, 0 0;
+  background-size: 150px 150px, 150px 150px, 100% 100%;
+}
+
+.mobile #content {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  background-color: transparent;
+  background-image: none;
+}
+
+.mobile #outer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile .topbar {
+  margin-top: 14px;
+  padding: 7px 16px;
+  font-size: 14px;
+}
+
+.mobile .bubble {
+  margin: 14px 12px 0 12px;
+  padding: 22px 20px;
+  font-size: 22px;
+}
+
+.mobile .bubble.answer {
+  font-size: 20px;
+}
+
+.mobile img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile a.hint {
+  font-size: 15px;
+  padding: 7px 16px;
+}
+
+.mobile div.hint {
+  margin: 10px 12px 0 12px;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+.mobile .io-toggle {
+  font-size: 15px;
+  padding: 7px 16px;
+}
+
+.mobile mjx-container,
+.mobile .MathJax,
+.mobile .katex-display,
+.mobile .katex {
+  font-size: 0.9em;
+}
